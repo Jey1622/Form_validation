@@ -17,9 +17,7 @@ const validate = (values) => {
   if (!values.email) {
     errors.email = "*Required";
   } else if (
-    !/^[A-Za-z_]{3,}@[A-Za-z]{3,}[.]{1}[A-Za-z.]{2,6}$/.test(
-      values.email
-    )
+    !/^[A-Za-z_]{3,}@[A-Za-z]{3,}[.]{1}[A-Za-z.]{2,6}$/.test(values.email)
   ) {
     errors.email = "*Invalid Email Address";
   }
@@ -48,10 +46,10 @@ function App() {
       confirmpassword: "",
     },
     validate,
-    onSubmit:(values,{resetForm})=>{
-      alert(`Hello , ${values.firstname} you successfully signed up!`)
-      resetForm({values:''})
-    }
+    onSubmit: (values, { resetForm }) => {
+      alert(`Hello , ${values.firstname} you successfully signed up!`);
+      resetForm({ values: "" });
+    },
   });
   console.log(formik.values);
   return (
